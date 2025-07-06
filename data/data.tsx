@@ -76,9 +76,7 @@ export const personalInfo = {
   title: "AI Developer & Machine Learning Engineer",
   description:
     "Passionate about building intelligent systems and creating innovative solutions using AI, machine learning, and modern web technologies.",
-  email: "talha@example.com",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
+  email: "talha.asher@talhaasher.co.uk",
   resumeUrl: "/resume.pdf",
 }
 
@@ -86,12 +84,12 @@ export const personalInfo = {
 export const socialLinks: SocialLink[] = [
   {
     icon: <Github className="w-6 h-6" />,
-    href: "https://github.com",
+    href: "https://github.com/talhaasher",
     label: "GitHub",
   },
   {
     icon: <Linkedin className="w-6 h-6" />,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/feed/",
     label: "LinkedIn",
   },
   {
@@ -109,17 +107,17 @@ export const contactInfo: ContactInfo[] = [
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
   },
-  {
-    icon: <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
-    title: "Phone",
-    value: personalInfo.phone,
-    href: `tel:${personalInfo.phone}`,
-  },
-  {
-    icon: <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
-    title: "Location",
-    value: personalInfo.location,
-  },
+  // {
+  //   icon: <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
+  //   title: "Phone",
+  //   value: personalInfo.phone,
+  //   href: `tel:${personalInfo.phone}`,
+  // },
+  // {
+  //   icon: <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
+  //   title: "Location",
+  //   value: personalInfo.location,
+  // },
 ]
 
 // Skills Data

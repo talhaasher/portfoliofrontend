@@ -97,24 +97,6 @@ CREATE TABLE IF NOT EXISTS certifications (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Personal Info table (for dynamic personal information)
-CREATE TABLE IF NOT EXISTS personal_info (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name VARCHAR(100) NOT NULL DEFAULT 'Talha',
-  title VARCHAR(200) NOT NULL DEFAULT 'AI Developer & Machine Learning Engineer',
-  bio TEXT,
-  email VARCHAR(100),
-  phone VARCHAR(20),
-  location VARCHAR(100),
-  website VARCHAR(200),
-  resume_url VARCHAR(500),
-  avatar_url VARCHAR(500),
-  social_links JSONB DEFAULT '{}',
-  contact_info JSONB DEFAULT '{}',
-  preferences JSONB DEFAULT '{}',
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
 
 -- Work Experience table
 CREATE TABLE IF NOT EXISTS work_experience (
@@ -135,21 +117,6 @@ CREATE TABLE IF NOT EXISTS work_experience (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Testimonials table
-CREATE TABLE IF NOT EXISTS testimonials (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name VARCHAR(100) NOT NULL,
-  position VARCHAR(200),
-  company VARCHAR(200),
-  content TEXT NOT NULL,
-  rating INTEGER CHECK (rating >= 1 AND rating <= 5) DEFAULT 5,
-  avatar_url VARCHAR(500),
-  linkedin_url VARCHAR(500),
-  is_featured BOOLEAN DEFAULT false,
-  is_approved BOOLEAN DEFAULT true,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
 
 -- Contact Messages table
 CREATE TABLE IF NOT EXISTS contact_messages (
