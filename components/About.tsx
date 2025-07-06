@@ -32,14 +32,7 @@ export default function About() {
               end-to-end solutions that combine the power of artificial intelligence with intuitive user experiences.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stat.value}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
         </div>
       </div>
