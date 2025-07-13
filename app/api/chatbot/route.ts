@@ -25,6 +25,7 @@ export async function POST(req: Request) {
         projects,
         personalInfo,
         lastUpdated: new Date().toISOString(),
+        
       };
     }
 
