@@ -14,6 +14,15 @@ export default function AIChat() {
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
+  // Function to clean asterisks and format text for web display
+  const cleanResponse = (text: string) => {
+    return text
+      .replace(/\*/g, '') // Remove all asterisks
+      .replace(/#{1,6}\s/g, '') // Remove markdown headers
+      .replace(/\n\s*\n/g, '\n\n') // Clean up extra line breaks
+      .trim();
+  }
+
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -39,14 +48,15 @@ export default function AIChat() {
         throw new Error(data.error);
       }
 
-      const aiResponse = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response. Please try again.";
-      setMessages((prev) => [...prev, { role: "assistant", content: aiResponse }]);
+      const rawResponse = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response. Please try again.";
+      const cleanedResponse = cleanResponse(rawResponse);
+      setMessages((prev) => [...prev, { role: "assistant", content: cleanedResponse }]);
     } catch (err) {
       console.error("Chat error:", err);
       const errorMessage = err instanceof Error ? err.message : "Unknown error occurred";
-      setMessages((prev) => [...prev, { 
-        role: "assistant", 
-        content: `I apologize, but I encountered an error: ${errorMessage}. Please try asking your question again, or feel free to contact Talha directly at talha.asher@talhaasher.co.uk.` 
+      setMessages((prev) => [...prev, {
+        role: "assistant",
+        content: `I apologize, but I encountered an error: ${errorMessage}. Please try asking your question again, or feel free to contact Talha directly at talha.asher@talhaasher.co.uk.`
       }]);
     } finally {
       setIsLoading(false);
