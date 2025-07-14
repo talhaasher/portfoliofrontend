@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Analytics } from '@vercel/analytics/next'
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300`}
       >
         <Navbar />
+<Analytics />
         <main className="min-h-screen">{children}</main>
         <Footer />
         {/* <DataStatus /> */}
