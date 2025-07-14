@@ -1,4 +1,3 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
 import { personalInfo, socialLinks, footerLinks, services } from "@/data/data"
 
 export default function Footer() {
@@ -11,17 +10,16 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4">{personalInfo.name}</h3>
             <p className="text-gray-300 mb-4 max-w-md">{personalInfo.description}</p>
             <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} className="text-gray-300 hover:text-white transition-colors">
-                  {link.icon === "Github" ? (
-                    <Github className="w-6 h-6" />
-                  ) : link.icon === "Linkedin" ? (
-                    <Linkedin className="w-6 h-6" />
-                  ) : (
-                    <Mail className="w-6 h-6" />
-                  )}
-                </a>
-              ))}
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+            ))}
             </div>
           </div>
 
@@ -48,11 +46,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
-          <p className="flex items-center justify-center gap-2">
-            Made with <Heart className="w-4 h-4 text-red-500" /> by {personalInfo.name} © 2025
-          </p>
-        </div>
+
       </div>
     </footer>
     </>

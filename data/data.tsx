@@ -89,7 +89,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     icon: <Linkedin className="w-6 h-6" />,
-    href: "https://www.linkedin.com/feed/",
+    href: "https://www.linkedin.com/in/talhaasher/",
     label: "LinkedIn",
   },
   {

@@ -40,10 +40,15 @@ export default function Hero() {
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">{personalInfo.description}</p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2">
+          <a
+            href="/TalhaAsherResume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 hover:text-blue-100 hover:bg-blue-700 transition-colors"
+          >
             <Download className="w-5 h-5" />
             Download Resume
-          </button>
+          </a>
           <div className="flex gap-4">
             {socialLinks.map((social, index) => (
               <a
